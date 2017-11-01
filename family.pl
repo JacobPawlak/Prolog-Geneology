@@ -16,7 +16,7 @@ age(josef_Matasich, 82)
 age(pamela_OConnor, 65) 
 age(bill_OConnor, 68)
 age(will_OConnor, 34)
-age(kelly_OConnor, 36)
+age(kelly_Spana, 36)
 
 %the other Pawlaks
 
@@ -62,32 +62,72 @@ child(willem_Pawlak, juli_Pawlak)
 
 %children of Dolice and Josef: Kristen
 
+child(josef_Matasich, kristen_Pawlak)
+child(dolice_Matasich, kristen_Pawlak)
+
 %children of Ralph and Kristen: Jacob, Matthew, Luke
+
+child(ralph_Pawlak, jacob_Pawlak)
+child(ralph_Pawlak, matthew_Pawlak)
+child(ralph_Pawlak, luke_Pawlak)
+
+child(kristen_Pawlak, jacob_Pawlak)
+child(kristen_Pawlak, matthew_Pawlak)
+child(kristen_Pawlak, luke_Pawlak)
 
 %children of Pamela and Bill: Will, Kelly
 
+child(bill_OConnor, kelly_Spana)
+child(bill_OConnor, will_OConnor)
+
+child(pamela_OConnor, kelly_Spana)
+child(pamela_OConnor, will_OConnor)
+
 %children of Sherri and Rick: Ricky, Andrea
+
+child(sherri_Pawlak, ricky_Pawlak)
+child(sherri_Pawlak, andrea_Pawlak)
+
+child(rick_Pawlak, ricky_Pawlak)
+child(rick_Pawlak, andrea_Pawlak)
 
 %children of Terry and Steve: Amy, Rebecca
 
+child(terry_Pawlak, amy_Dow)
+child(terry_Pawlak, rebecca_Miller)
+
+child(steve_Shwartz, amy_Dow)
+child(steve_Shwartz, rebecca_Miller)
+
 %children of Juli: Nicole, Jon
 
+child(juli_Pawlak, nicole_McFarland)
+child(juli_Pawlak, jon_Sylvester)
+
 %children of Jim and Michelle: Nik, Tyler
+
+child(jim_Pawlak, nik_Pawlak)
+child(jim_Pawlak, tyler_Pawlak)
+
+child(michelle_Pawlak, nik_Pawlak)
+child(michelle_Pawlak, tyler_Pawlak)
+
+
 
 
 
 %The rest of these need to be written implicitly
 
-parent()
+%parent()
 
 
-sibling()
+%sibling()
 
 
-nth-cousin()
+%nth-cousin()
 
 
-nth-cousin-k-times-removed()
+%nth-cousin-k-times-removed()
 
 
-grandparent()
+%grandparent()

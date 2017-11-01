@@ -113,15 +113,16 @@ child(michelle_Pawlak, nik_Pawlak).
 child(michelle_Pawlak, tyler_Pawlak).
 
 
-
-
-
 %The rest of these need to be written implicitly
 
 %parent()
 
+parent(X,Y) :- child(Y, X).
+
 
 %sibling()
+
+sibling(X, Y) :- child(Z, X), child(Z, Y).  
 
 
 %nth-cousin()

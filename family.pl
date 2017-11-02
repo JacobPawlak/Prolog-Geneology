@@ -136,10 +136,20 @@ sibling(X, Y) :- child(Z, X), child(Z, Y), (X \== Y).
 
 %nth-cousin()
 
+nth-cousin() :-
+
 
 %nth-cousin-k-times-removed()
+
+nth-cousin-k-times-removed() :-
 
 
 %grandparent()
 
 grandparent(C, G) :- child(P, C), child(G, P).
+
+
+%older-than()
+
+older-than(X, Y) :- age(X, A), age(Y, B), (A > B).
+

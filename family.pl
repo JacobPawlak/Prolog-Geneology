@@ -1,3 +1,10 @@
+%Jacob Pawlak | CS463G | October 28th, 2017
+%Program 4 - Family Trees in Prolog
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%The Pawlak Geneology Knowledge Base.
+
 %my Pawlaks
 
 age(jacob_Pawlak, 21).
@@ -113,6 +120,8 @@ child(michelle_Pawlak, nik_Pawlak).
 child(michelle_Pawlak, tyler_Pawlak).
 
 
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 %The rest of these need to be written implicitly
 
 %parent()
@@ -132,3 +141,5 @@ sibling(X, Y) :- child(Z, X), child(Z, Y).
 
 
 %grandparent()
+
+grandparent(G, K) :- parent(G, P), parent(P, K).

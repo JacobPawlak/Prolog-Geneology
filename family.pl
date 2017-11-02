@@ -126,30 +126,34 @@ child(michelle_Pawlak, tyler_Pawlak).
 
 %parent()
 
-parent(X,Y) :- child(Y, X).
+parent(Child, Parent) :- child(Parent, Child).
 
 
 %sibling()
 
-sibling(X, Y) :- child(Z, X), child(Z, Y), (X \== Y).
+sibling(Siba, Sibb) :- child(Parent, Siba), child(Parent, Sibb), (Siba \== Sibb).
 
 
-%nth-cousin()
+%nth_cousin()
 
-nth-cousin() :-
+nth_cousin(Cousa, Cousb, 1) :- parent(Cousa, Siba), parent(Cousb, Sibb), sibling(Siba, Sibb).
+
+nth_cousin(Cousa, Cousb, Nth) :- Next is Nth-1, parent(Cousa, Siba), parent(Cousb, Sibb), nth_cousin(Siba, Sibb, Next).
 
 
-%nth-cousin-k-times-removed()
+%nth_cousin_k_times_removed()
 
-nth-cousin-k-times-removed() :-
+nth_cousin_k_times_removed(Cousa, Cousb, Nth, 0) :- nth_cousin(Cousa, Cousb, Nth).
+
+nth_cousin_k_times_removed(Cousa, Cousb, Nth, K) :- Next is K-1, parent(Cousb, Cousc), nth_cousin_k_times_removed(Cousa, Cousc, Nth, Next).
 
 
 %grandparent()
 
-grandparent(C, G) :- child(P, C), child(G, P).
+grandparent(Child, Grandparent) :- child(Parent, Child), child(Grandparent, Parent).
 
 
-%older-than()
+%older_than()
 
-older-than(X, Y) :- age(X, A), age(Y, B), (A > B).
+older_than(Fama, Famb) :- age(Fama, Agea), age(Famb, Ageb), (Agea > Ageb).
 

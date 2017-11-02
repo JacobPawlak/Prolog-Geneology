@@ -32,22 +32,22 @@ age(rick_Pawlak, 59).
 age(ricky_Pawlak, 33).
 age(andrea_Pawlak, 32).
 
-age(terry_Pawlak, 58).
-age(steve_Shwartz, 60).
+age(terry_Pawlak, 57).
+age(steve_Shwartz, 61).
 age(amy_Dow, 30).
 age(rebecca_Miller, 31).
 
 age(michelle_Pawlak, 52).
 age(jim_Pawlak, 57).
-age(nik_Pawlak, 33).
+age(nik_Pawlak, 35).
 age(tyler_Pawlak, 34).
 
 age(juli_Pawlak, 52).
-age(nicole_McFarland, 31)
-age(jon_Sylvester, 30)
+age(nicole_McFarland, 37).
+age(jon_Sylvester, 38).
 
-age(marge_Pawlak, 91)
-age(willem_Pawlak, 95)
+age(marge_Pawlak, 91).
+age(willem_Pawlak, 95).
 
 
 
@@ -131,7 +131,7 @@ parent(X,Y) :- child(Y, X).
 
 %sibling()
 
-sibling(X, Y) :- child(Z, X), child(Z, Y).  
+sibling(X, Y) :- child(Z, X), child(Z, Y), (X \== Y).
 
 
 %nth-cousin()
@@ -142,4 +142,4 @@ sibling(X, Y) :- child(Z, X), child(Z, Y).
 
 %grandparent()
 
-grandparent(G, K) :- parent(G, P), parent(P, K).
+grandparent(C, G) :- child(P, C), child(G, P).

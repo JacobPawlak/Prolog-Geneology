@@ -50,6 +50,10 @@ age(marge_Pawlak, 91).
 age(willem_Pawlak, 95).
 
 
+%older_than()
+
+older_than(Fama, Famb) :- age(Fama, Agea), age(Famb, Ageb), (Agea > Ageb).
+
 
 %children of Marge and Willem: Ralph, Jim, Rick, Terry, Pam, Juli
 
@@ -153,7 +157,19 @@ nth_cousin_k_times_removed(Cousa, Cousb, Nth, K) :- Next is K-1, parent(Cousb, C
 grandparent(Child, Grandparent) :- child(Parent, Child), child(Grandparent, Parent).
 
 
-%older_than()
+%sort_by_age()
 
-older_than(Fama, Famb) :- age(Fama, Agea), age(Famb, Ageb), (Agea > Ageb).
+sort_by_age(Children, Perm) :- permutation(Children, Perm), sorted(Perm).
+
+
+%sorted()
+
+sorted([]).
+sorted([Head|[]]).
+sorted([Head1, Head2|Tail]) :- older_than(Head1, Head2), sorted([Head2|Tail]).
+
+
+%kth_child()
+
+kth_child(Child, Parent, Kth) :- setof(Child, child(Parent, Child), List), sort_by_age(List, Perm), nth0(Kelem, Perm, Child).
 
